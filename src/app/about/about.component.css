@@ -1,0 +1,32 @@
+.row{
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+.pull-right{
+  float: right !important;
+}
+.inline_element{
+  display: inline;
+}
+img{
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  max-height: 150px;
+}
+.selected_car{
+  max-width: 500px;
+  max-height: 350px;
+  margin-top: 40px;
+}
+.selected_box{
+  margin: 20px;
+}
+.main_image_text{
+  padding-top: 40px;
+}
+.filters{
+  width: 500px;
+  margin-bottom: 15px;
+}
+
