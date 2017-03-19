@@ -26,12 +26,12 @@ export class AboutComponent {
   cars =  this.carsArray;
   selectedCar = this.cars[0];
   public sortArray = function(orderBy){
-
     this.order =orderBy;
 
   }
 
   public carSelected = function (id) {
     this.selectedCar =this.carsArray[id];
+    window.scrollTo(0,document.body.scrollHeight);
   }
 }

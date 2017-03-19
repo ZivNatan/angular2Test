@@ -1,57 +1,71 @@
-<div class="bs-component">
-  <div class="row">
-      <div>
-          <h1>Our cars:</h1>
-          <p>Here you can find the best cars  in world!</p>
-      </div>
-  </div>
+<div class="fullscreen-bg" style="z-index: -100">
 
-  <div class="container filters row">
-    <div class="col-md-8">
-      <label>Filter by name: </label>
-      <input class="form-control input-sm" type="text" [(ngModel)]="term" >
-    </div><br>
-    <div class="btn-group col-md-4">
-      <span class="btn btn-primary">Sort</span>
-      <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="#" (click)="sortArray('name')">Name</a></li>
-        <li><a href="#"  (click)="sortArray('text')">Text</a></li>
-        <li class="divider"></li>
-        <li><a href="#" (click)="sortArray('src')">Src</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!--<gallery-->
-  <!--[flexBorderSize]="3"-->
-  <!--[flexImageSize]="7"-->
-  <!--[galleryName]="yourGalleryName"-->
-  <!--(viewerChange)="yourNotificationFunction($event)">-->
-<!--</gallery>-->
+  <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+    <source src="../assets/images/SportsCars2016.mp4" type="video/webm">
+    <source src="../assets/images/SportsCars2016.mp4" type="video/mp4">
+    <source src="../assets/images/SportsCars2016.mp4" type="video/ogg">
+    aaaaaaaaaaaaaa
+  </video>
 
 
-
-  <div class="container">
-    <div class="row" >
-      <div class="col-md-3"*ngFor="let car of cars | orderBy : order | filter:term " (click)="carSelected(car.id)">
-         <img [src]="car.src">
-        {{car.name | uppercase}}
-      </div>
-    </div>
-
-    <div class="selected_box jumbotron">
-        <div class="row">
-            <div class="col-md-6">
-                <img class="selected_car" [src]='selectedCar.src'>
-            </div>
-            <div class="col-md-6 main_image_text">
-              <p>
-                 {{selectedCar.text}}
-              </p>
-            </div>
+</div >
+  <div class="bs-component" style="margin-top:100px">
+    <div class="row">
+        <div>
+            <h1>Our cars:</h1>
+            <p>Here you can find the best cars  in world!</p>
         </div>
     </div>
+
+
+    <div class="container filters row">
+      <div class="col-md-8">
+        <label>Filter by name: </label>
+        <input class="form-control input-sm" type="text" [(ngModel)]="term" >
+      </div><br>
+      <div class="btn-group col-md-4">
+        <span class="btn btn-primary">Sort</span>
+        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" (click)="sortArray('name')">Name</a></li>
+          <li><a href="#"  (click)="sortArray('text')">Text</a></li>
+          <li class="divider"></li>
+          <li><a href="#" (click)="sortArray('src')">Src</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--<gallery-->
+    <!--[flexBorderSize]="3"-->
+    <!--[flexImageSize]="7"-->
+    <!--[galleryName]="yourGalleryName"-->
+    <!--(viewerChange)="yourNotificationFunction($event)">-->
+  <!--</gallery>-->
+
+
+
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-3"*ngFor="let car of cars | orderBy : order | filter:term " (click)="carSelected(car.id)">
+           <img [src]="car.src">
+          {{car.name | uppercase}}
+        </div>
+      </div>
+
+      <div class="selected_box jumbotron">
+          <div class="row">
+              <div class="col-md-6">
+                  <img class="selected_car" [src]='selectedCar.src'>
+              </div>
+              <div class="col-md-6 main_image_text">
+                <p>
+                   {{selectedCar.text}}
+                </p>
+              </div>
+          </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
+
