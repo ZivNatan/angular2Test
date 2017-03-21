@@ -8,7 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { FilterPipe } from './filter.pipe';
 import { Ng2OrderPipe } from './orderby.pipe';
-// import  {Angular2ImageGalleryModule} from 'angular2-image-gallery';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import  {Angular2ImageGalleryModule} from 'angular2-image-gallery';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { Ng2OrderPipe } from './orderby.pipe';
     ServicesComponent,
     FilterPipe,
     Ng2OrderPipe
-    //, Angular2ImageGalleryModule
+
 
   ],
   imports: [
@@ -25,6 +26,8 @@ import { Ng2OrderPipe } from './orderby.pipe';
     FormsModule,
     HttpModule,
     routes,
+    InfiniteScrollModule,
+    Angular2ImageGalleryModule
 
   ],
   providers: [],
