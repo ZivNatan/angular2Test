@@ -1,71 +1,71 @@
 <div class="fullscreen-bg" style="z-index: -100">
-
-  <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+  <video loop muted autoplay class="fullscreen-bg__video">
     <source src="../assets/images/SportsCars2016.mp4" type="video/webm">
     <source src="../assets/images/SportsCars2016.mp4" type="video/mp4">
     <source src="../assets/images/SportsCars2016.mp4" type="video/ogg">
-    aaaaaaaaaaaaaa
   </video>
+</div>
 
-
-</div >
-  <div class="bs-component" style="margin-top:100px">
+<div class="bs-component" style="margin-top:100px">
     <div class="row">
         <div>
             <h1>Our cars:</h1>
             <p>Here you can find the best cars  in world!</p>
         </div>
     </div>
-
-
     <div class="container filters row">
-      <div class="col-md-8">
-        <label>Filter by name: </label>
-        <input class="form-control input-sm" type="text" [(ngModel)]="term" >
-      </div><br>
-      <div class="btn-group col-md-4">
-        <span class="btn btn-primary">Sort</span>
-        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#" (click)="sortArray('name')">Name</a></li>
-          <li><a href="#"  (click)="sortArray('text')">Text</a></li>
-          <li class="divider"></li>
-          <li><a href="#" (click)="sortArray('src')">Src</a></li>
-        </ul>
-      </div>
+        <div class="col-md-8">
+          <label>Filter by name: </label>
+          <input class="form-control input-sm" type="text" [(ngModel)]="term" >
+        </div><br>
+        <div class="btn-group col-md-4">
+          <span class="btn btn-primary">Sort</span>
+          <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a  (click)="sortArray('name')">Name</a></li>
+            <li><a (click)="sortArray('text')">Text</a></li>
+            <li class="divider"></li>
+            <li><a (click)="sortArray('src')">Src</a></li>
+          </ul>
+        </div>
     </div>
-
     <!--<gallery-->
     <!--[flexBorderSize]="3"-->
     <!--[flexImageSize]="7"-->
     <!--[galleryName]="yourGalleryName"-->
     <!--(viewerChange)="yourNotificationFunction($event)">-->
   <!--</gallery>-->
-
-
-
     <div class="container">
-      <div class="row" >
-        <div class="col-md-3"*ngFor="let car of cars | orderBy : order | filter:term " (click)="carSelected(car.id)">
-           <img [src]="car.src">
-          {{car.name | uppercase}}
-        </div>
-      </div>
-
-      <div class="selected_box jumbotron">
-          <div class="row">
-              <div class="col-md-6">
-                  <img class="selected_car" [src]='selectedCar.src'>
-              </div>
-              <div class="col-md-6 main_image_text">
-                <p>
-                   {{selectedCar.text}}
-                </p>
-              </div>
+        <div class="row" >
+          <div class="col-md-3 image_wrapper" *ngFor="let car of cars | orderBy : order | filter:term " (click)="carSelected(car.id)">
+             <img  [src]="car.src">
+            <div>{{car.name | uppercase}}</div>
           </div>
-      </div>
-    </div>
+        </div>
 
-  </div>
+      <div class="bs-component">
+        <ul class="pagination">
+          <li [class.disabled]="page <= 1"><a [class.disabled]="page-1 <= 0" (click)="pagination(page-1)">«</a></li>
+          <li><a (click)="pagination(first)" [class.page_selected]="first == page">{{first}}</a></li>
+          <li><a (click)="pagination(middle)" [class.page_selected]="middle == page">{{middle}}</a></li>
+          <li><a (click)="pagination(last)" [class.page_selected]="last == page">{{last}}</a></li>
+          <li [class.disabled]="page >= (carsArray.length/4)-1"><a [class.disabled]="page+1 >lastPage" (click)="pagination(page+1)">»</a></li>
+        </ul>
+
+
+        <div class="selected_box jumbotron" [class.hide]="!selectedCar.src">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="selected_car" [src]='selectedCar.src'>
+                </div>
+                <div class="col-md-6 main_image_text">
+                  <p>
+                     {{selectedCar.text}}
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 

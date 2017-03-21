@@ -7,6 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class Ng2OrderPipe implements PipeTransform {
 
   transform(value: any[], expression?: any, reverse?: boolean): any {
+    debugger;
     if (!value) {
       return value;
     }

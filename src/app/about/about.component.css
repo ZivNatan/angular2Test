@@ -8,11 +8,21 @@
 .inline_element{
   display: inline;
 }
+.disabled{
+  pointer-events: none;
+}
 img{
   width: 100%;
   height: 100%;
   max-width: 250px;
   max-height: 150px;
+}
+img:hover{
+  border: 1px solid #375a7f;
+}
+.image_wrapper:hover{
+  color: #022244;
+  cursor: pointer;
 }
 .selected_car{
   max-width: 500px;
@@ -21,6 +31,9 @@ img{
 }
 .selected_box{
   margin: 20px;
+}
+.page_selected{
+  background-color: #0ce3ac;
 }
 .main_image_text{
   padding-top: 40px;

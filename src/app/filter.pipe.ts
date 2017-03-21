@@ -5,9 +5,7 @@ import  {AppComponent} from './app.component';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-
   transform(carsArray:any[], term: any): any {
-    debugger;
     //check if  search term is  undefined
     if(term === undefined) return carsArray;
     // return update car array
