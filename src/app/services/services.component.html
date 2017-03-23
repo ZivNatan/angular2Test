@@ -1,24 +1,43 @@
 <div class="bs-component" style="margin-top:100px">
+    <div class="row header">
+      <h1>Load images on scrolling</h1>
+    </div>
+    <div class="row header">
+      <div class="col-md-6">
 
-    <div class="row">
-
-        <h3>Load image will scrolling</h3>
-          <div class="search-results shadow"
-               infinite-scroll
-               [infiniteScrollDistance]="2"
-               [infiniteScrollThrottle]="300"
-               (scrolled)="onScroll()">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wyaJSWEEl8w" frameborder="0" allowfullscreen></iframe>
-                   <div calss="row">
-                     <span *ngFor="let car of carsGallery">
-                       <img  [src]="car.src">
-                     </span>
-
-                   </div>
-
-          </div>
-
-
+        <div class="filters row">
+            <div class="col-md-6">
+              <label>Filter by name: </label>
+              <input class="form-control input-sm" type="text" [(ngModel)]="term" >
+            </div><br>
+            <div class="btn-group col-md-4">
+              <span class="btn btn-primary">Sort</span>
+              <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a  (click)="sortArray('name')">Name</a></li>
+                <li><a (click)="sortArray('text')">Text</a></li>
+                <li class="divider"></li>
+                <li><a (click)="sortArray('id')">Id</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wyaJSWEEl8w" frameborder="0" allowfullscreen class="shadow"></iframe>
+      </div>
+    </div>
+    <div calss="row display_center">
+        <div class="search-results shadow_inset"
+             infinite-scroll
+             [infiniteScrollDistance]="2"
+             [infiniteScrollThrottle]="300"
+             (scrolled)="onScroll()">
+                 <div calss="row">
+                   <span *ngFor="let car of carsGallery| orderBy : order| filter:term">
+                     <img  [src]="car.src">
+                   </span>
+                 </div>
+        </div>
     </div>
 </div>
 

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -8,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['services.component.css']
 
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent {
 
-
+  order='id';
   carsArray = [
     {id:'0', name:'QLeD3m', src:'../assets/images/BB.jpg', text:"D: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."},
     {id:'1', name:'leedsz02', src:'../assets/images/leedsz02.jpg',text:"C: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.."},
@@ -45,18 +43,22 @@ export class ServicesComponent implements OnInit {
     {id:'24', name:'American-muscle', src:'../assets/images/54cae4238a5cf_-_american-muscle-facts-05-0312-xln.jpg', text:"D: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."},
     {id:'25', name:'Mclaren-p14', src:'../assets/images/25-cars-worth-waiting-for-lp-mclaren-p14-photo-658259-s-original.jpg',text:"C: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.."}
   ];
-  initGalleryIndex = 16;
-  carsGallery= this.carsArray.slice(0,this.initGalleryIndex);
 
-  ngOnInit() {
-
+  public sortArray = function(orderBy){
+    this.order =orderBy;
   }
+  galleryIndex = 6;
+  carsGallery= this.carsArray.slice(0,this.galleryIndex);
 
   onScroll () {
-    debugger;
     console.log('scrolled!!');
-    this.initGalleryIndex = this.initGalleryIndex+4;
-    this.carsGallery= this.carsArray.slice(0,this.initGalleryIndex);
+     debugger;
+    if((this.galleryIndex+4) > this.carsArray.length){
+      this.galleryIndex = this.carsArray.length;
+    }else{
+      this.galleryIndex = this.galleryIndex+4;
+    }
+    this.carsGallery= this.carsArray.slice(0,this.galleryIndex);
   }
 
 }

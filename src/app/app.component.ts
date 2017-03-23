@@ -16,7 +16,6 @@ export class AppComponent implements OnInit{
     this.httpServices.getData()
       .subscribe(
         (data: Response) => {
-          debugger;
           console.log(data)
         }
 

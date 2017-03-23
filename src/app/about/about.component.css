@@ -24,6 +24,16 @@ img:hover{
   color: #022244;
   cursor: pointer;
 }
+.selected{
+  color: #022244;
+}
+.selected img{
+  border: 2px solid #375a7f;
+  -moz-box-shadow:     0 0 10px #000000;
+  -webkit-box-shadow:  0 0 10px #000000;
+  box-shadow:          0 0 10px #000000;
+
+}
 .selected_car{
   max-width: 500px;
   max-height: 350px;

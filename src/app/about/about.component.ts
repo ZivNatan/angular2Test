@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
-import { FilterPipe} from '../filter.pipe';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import  {AppComponent} from '../app.component'
-
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css'],
 })
-export class AboutComponent {
-
+export class AboutComponent  {
 
   carsArray = [
     {id:'0', name:'QLeD3m', src:'../assets/images/BB.jpg', text:"D: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."},
@@ -47,12 +41,8 @@ export class AboutComponent {
     {id:'24', name:'American-muscle', src:'../assets/images/54cae4238a5cf_-_american-muscle-facts-05-0312-xln.jpg', text:"D: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."},
     {id:'25', name:'Mclaren-p14', src:'../assets/images/25-cars-worth-waiting-for-lp-mclaren-p14-photo-658259-s-original.jpg',text:"C: It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.."}
   ];
-
   cars =  this.carsArray.slice(0,4);
-  selectedCar = this.cars[0];
-  public sortArray = function(orderBy){
-    this.order =orderBy;
-  }
+  selectedCar = this.carsArray[9];
   page=1;
   lastPage = Math.ceil(this.carsArray.length/4);
   first=1;
@@ -86,9 +76,17 @@ export class AboutComponent {
     this.cars =  this.carsArray.slice(start,end);
 
   }
-
-  public carSelected = function (id) {
-    this.selectedCar =this.carsArray[id];
-    // window.scrollTo(0,document.body.scrollHeight);
+  public carSelected = function (id,index) {
+    this.selectedCar = this.carsArray[id];
+    window.scrollTo(0,document.body.scrollHeight);
+    if( this.cars[index].selected == undefined || this.cars[index].selected == false ){
+      this.cars[index].selected = true;
+      this.carsArray[id].selected = true;
+    }else{
+      this.cars[index].selected = false;
+      this.carsArray[id].selected = false;
+    }
   }
 }
+
+
