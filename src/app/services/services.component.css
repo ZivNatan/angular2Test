@@ -5,11 +5,13 @@
   max-width: 1150px;
 }
 .row{
+  display: flex;
   flex-direction: row;
   flex-wrap:wrap;
   margin-left: auto;
   margin-right:auto;
   padding-bottom: 15px;
+  max-width: 1150px;
 
 }
 
@@ -19,18 +21,11 @@
 .filters{
   display: flex;
   align-items:flex-end;
-
-
 }
 .search-results {
-  margin-left: auto;
-  margin-right:auto;
-  width:1150px;
-  padding: 50px;
-  text-align: center;
 
-  border-bottom: 0;
-  border-top: 0;
+  display: flex;
+  justify-content:flex-start;
 
 }
 .shadow_inset {

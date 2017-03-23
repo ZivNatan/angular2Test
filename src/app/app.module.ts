@@ -10,6 +10,7 @@ import { FilterPipe } from './filter.pipe';
 import { Ng2OrderPipe } from './orderby.pipe';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import  {Angular2ImageGalleryModule} from 'angular2-image-gallery';
+import { SelectedCarComponent } from './about/selected-car/selected-car.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import  {Angular2ImageGalleryModule} from 'angular2-image-gallery';
     AboutComponent,
     ServicesComponent,
     FilterPipe,
-    Ng2OrderPipe
+    Ng2OrderPipe,
+    SelectedCarComponent
 
 
   ],

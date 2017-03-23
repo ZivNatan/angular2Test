@@ -32,22 +32,15 @@ img:hover{
   -moz-box-shadow:     0 0 10px #000000;
   -webkit-box-shadow:  0 0 10px #000000;
   box-shadow:          0 0 10px #000000;
+}
 
-}
-.selected_car{
-  max-width: 500px;
-  max-height: 350px;
-  margin-top: 40px;
-}
 .selected_box{
   margin: 20px;
 }
 .page_selected{
   background-color: #0ce3ac;
 }
-.main_image_text{
-  padding-top: 40px;
-}
+
 .filters{
   width: 500px;
   margin-bottom: 15px;

@@ -23,21 +23,21 @@
         </div>
       </div>
       <div class="col-md-6 ">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/wyaJSWEEl8w" frameborder="0" allowfullscreen class="shadow"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RXqSedWSu2k" frameborder="0" allowfullscreen></iframe>
+          <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/wyaJSWEEl8w" frameborder="0" allowfullscreen class="shadow"></iframe>-->
       </div>
     </div>
-    <div calss="row display_center">
-        <div class="search-results shadow_inset"
+    <div class="row display_center"
              infinite-scroll
              [infiniteScrollDistance]="2"
              [infiniteScrollThrottle]="300"
              (scrolled)="onScroll()">
-                 <div calss="row">
-                   <span *ngFor="let car of carsGallery| orderBy : order| filter:term">
+                 <div class="row search-results shadow_inset">
+                   <div class="col" *ngFor="let car of carsGallery| orderBy : order| filter:term">
                      <img  [src]="car.src">
-                   </span>
+                   </div>
                  </div>
-        </div>
+
     </div>
 </div>
 
