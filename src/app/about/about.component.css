@@ -2,12 +2,14 @@
   flex-direction: row;
   flex-wrap:wrap;
 }
-.pull-right{
-  float: right !important;
-}
+
 .inline_element{
   display: inline;
 }
+.bs-component{
+  margin-top:100px;
+}
+
 .disabled{
   pointer-events: none;
 }
@@ -41,10 +43,6 @@ img:hover{
   background-color: #0ce3ac;
 }
 
-.filters{
-  width: 500px;
-  margin-bottom: 15px;
-}
 
 .fullscreen-bg {
   position: fixed;
